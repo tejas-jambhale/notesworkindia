@@ -70,7 +70,7 @@ def signup(request):
     else:
         form = SignUpForm()
     #return render(request, 'signup.html', {'form': SignUpForm()})
-    return Response({"success": False, "msg": "something went wrong"}, status=status.HTTP_401_UNAUTHORIZED)
+     return Response({"success": True, "msg": "You are signedup successfully"})
     
 
 class UserLoginView(generics.GenericAPIView):
@@ -149,6 +149,6 @@ def AddView(request):
             
             new_note.save()
             return HttpResponseRedirect('/sites/list/')
-    return render(request, 'notepage.html', {'form': NoteForm()})
-    #return Response({"success": False, "msg": "something went wrong"}, status=status.HTTP_401_UNAUTHORIZED)
+    
+    return Response({"success": True, "msg": "added note"})
     
